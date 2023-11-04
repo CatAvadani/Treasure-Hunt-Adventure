@@ -1,0 +1,161 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --ff-primary: "Roboto", sans-serif;
+  --ff-title: "Pirata One", sans-serif;
+  --color-primary: #ffffff;
+  --color-primary-0: rgba(255, 255, 255, 0.6);
+  --color-secondary: rgba(3, 39, 47, 0.8);
+  --color-black: #000000;
+  --leter-spacing: 0.3rem;
+  --font-size-h1: 3.5rem;
+  --font-size-h2: 2.5rem;
+  --font-size-p: 1.5rem;
+  --radius: 5px;
+}
+
+body {
+  height: 100%;
+  font-family: var(--ff-primary);
+  /* background-image: url("/images/beach-img.jpg"); */
+  color: var(--color-primary);
+  object-fit: cover;
+  position: relative;
+  text-align: center;
+}
+h1 {
+  font-family: var(--ff-title);
+  font-size: var(--font-size-h1);
+  margin: 0;
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+}
+p {
+  font-size: var(--font-size-p);
+  line-height: 2.5rem;
+}
+/*
+  ===================
+  background 
+  ===================
+  */
+.img-container {
+  height: 100vh;
+  width: 100vw;
+}
+video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+/*
+  ===================
+  center container
+  ===================
+  */
+
+.center-container {
+  position: absolute;
+  text-align: center;
+  top: 0%;
+  left: 0%;
+  padding: 0 1rem;
+}
+/* adding an overlay  */
+.img-container::after {
+  position: absolute;
+  content: "";
+  background-color: rgb(0, 0, 0, 0.4);
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+#title {
+  padding-top: 3rem;
+  margin: auto;
+  max-width: 400px;
+  letter-spacing: var(--leter-spacing);
+}
+#description {
+  padding: 1rem;
+  margin-top: 2rem;
+}
+#instruction {
+  padding: 1rem 0;
+}
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+button {
+  font-size: var(--font-size-p);
+  font-family: var(--ff-primary);
+  padding: 0.5rem 1.2rem;
+  border-radius: 3rem;
+  border-color: transparent;
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+  transition: all 0.3s linear;
+}
+button:hover {
+  background-color: var(--color-primary-0);
+  color: var(--color-black);
+}
+
+/*  inventory section */
+
+.inventory-collection {
+  margin: 2rem auto;
+  width: 430px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 0.5rem;
+}
+.inventory-item {
+  height: 100px;
+  width: 100px;
+  border-radius: var(--radius);
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+/*
+  ===================
+  setup for bigger screens
+  ===================
+  */
+@media screen and (min-width: 800px) {
+  #instruction {
+    padding: 1rem 0;
+  }
+  #title {
+    margin-top: 5rem;
+    padding-top: 3rem;
+    max-width: 60%;
+  }
+  #description {
+    max-width: 70%;
+    margin: 1.5rem auto;
+    line-height: 3rem;
+    font-size: 2rem;
+  }
+  .inventory-collection {
+    width: 700px;
+    margin: auto;
+    margin-top: 5rem;
+  }
+}
