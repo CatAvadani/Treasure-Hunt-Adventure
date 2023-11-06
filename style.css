@@ -100,19 +100,47 @@ img {
   transform: scale(5);
   cursor: pointer;
 }
-#shell {
+.shell {
   position: absolute;
   height: 70px;
   width: 70px;
-  left: 10%;
-  top: 10%;
+  left: 20%;
+  bottom: 28%;
   z-index: 2;
   transition: var(--transition);
 }
-#shell:hover {
+.shell:hover {
   transform: scale(2);
   cursor: pointer;
 }
+.message-bottle {
+  position: absolute;
+  height: 100px;
+  width: 70px;
+  right: 15%;
+  bottom: 10%;
+  z-index: 2;
+  transition: var(--transition);
+}
+.message-bottle:hover {
+  transform: scale(2);
+  cursor: pointer;
+}
+.message-container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 60%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  transform: translate(-50%, -50%);
+  color: var(--color-black);
+  background-image: url(/images/message2.png);
+  background-size: cover;
+  z-index: 2;
+}
+
 #title {
   padding-top: 3rem;
   margin: auto;

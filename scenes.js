@@ -12,14 +12,15 @@ const scenes = [
     },
     button2: {
       title: "Leave the Island",
-      nextScene: 4,
+      nextScene: 3,
     },
   },
 
   {
     title: "The Lost Treasure Map",
-    text: "You found the mysterious map! Your first task is to decipher the hidden message to uncover the clues. The riddle leads through the ancient island known for its hidden caves. ",
-    instruction: "",
+    text: "You found the mysterious map! Explore your surroundings, search for clues and collect all the hidden items. The map leads through the ancient island known for its hidden caves. ",
+    instruction: "Make a choise!",
+    inventoryMessage: "You found a shiny seashell on the beach.",
     background: "images/hidden-map.png",
     button1: {
       title: "Explore",
