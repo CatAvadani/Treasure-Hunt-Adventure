@@ -12,7 +12,6 @@
       rel="stylesheet"
     />
     <!-- css -->
-    <link rel="stylesheet" href="normalize.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -21,28 +20,25 @@
         autoplay
         muted
         loop
+        id="background-video"
         class="video-container"
         poster="images/Abandoned-ship.png"
       >
         <source src="videos/Abandoned-ship .mp4" type="video/mp4" />
         Sorry, your browser does not support embedded videos.
       </video>
-      <!-- <img src="images/beach-img.jpg" alt="" /> -->
+      <img id="background-img" src="" alt="" />
+      <img id="hidden-map" src="images/hidden-map.png" alt="" />
+      <img id="shell" src="images/shell1.png" alt="" />
     </div>
     <div class="center-container">
-      <h1 id="title">Treasure Hunt Adventure</h1>
-      <p id="description">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad harum
-        perspiciatis quae possimus eum maxime corrupti officiis. Nemo sequi,
-        temporibus atque veritatis nesciunt, ad natus animi consequuntur quidem,
-        adipisci sed?
-      </p>
-      <h2 id="instruction">Lorem ipsum dolor sit amet.</h2>
+      <h1 id="title"><!-- JS --></h1>
+      <p id="description"><!-- JS --></p>
+      <h2 id="instruction"><!-- JS --></h2>
 
       <div class="buttons">
-        <button id="btn-1">Explore</button>
-        <button id="btn-2">Search For Treasure</button>
-        <button id="btn-3">Leave the Island</button>
+        <button id="btn-1" type="button"><!-- JS --></button>
+        <button id="btn-2" type="button"><!-- JS --></button>
       </div>
       <div class="inventory-collection">
         <div class="inventory-item">diamond</div>
@@ -55,6 +51,7 @@
     </div>
 
     <!-- Javascript link -->
+    <script src="scenes.js"></script>
     <script src="main.js"></script>
   </body>
 </html>

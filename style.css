@@ -12,9 +12,10 @@
   --color-black: #000000;
   --leter-spacing: 0.3rem;
   --font-size-h1: 3.5rem;
-  --font-size-h2: 2.5rem;
+  --font-size-h2: 2rem;
   --font-size-p: 1.5rem;
   --radius: 5px;
+  --transition: all 0.3s linear;
 }
 
 body {
@@ -58,6 +59,7 @@ img {
   width: 100%;
   object-fit: cover;
 }
+
 /*
   ===================
   center container
@@ -67,21 +69,50 @@ img {
 .center-container {
   position: absolute;
   text-align: center;
-  top: 0%;
-  left: 0%;
-  padding: 0 1rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 90%;
+  border-radius: 2px solid red;
 }
 /* adding an overlay  */
 .img-container::after {
   position: absolute;
   content: "";
-  background-color: rgb(0, 0, 0, 0.4);
+  background-color: rgb(0, 0, 0, 0.2);
   top: 0;
   left: 0;
   height: 100vh;
   width: 100vw;
 }
-
+/* hidden map */
+#hidden-map {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  left: 10%;
+  bottom: 20%;
+  z-index: 5;
+  transition: var(--transition);
+}
+#hidden-map:hover {
+  transform: scale(5);
+  cursor: pointer;
+}
+#shell {
+  position: absolute;
+  height: 70px;
+  width: 70px;
+  left: 10%;
+  top: 10%;
+  z-index: 2;
+  transition: var(--transition);
+}
+#shell:hover {
+  transform: scale(2);
+  cursor: pointer;
+}
 #title {
   padding-top: 3rem;
   margin: auto;
@@ -91,6 +122,7 @@ img {
 #description {
   padding: 1rem;
   margin-top: 2rem;
+  border-radius: 2px solid red;
 }
 #instruction {
   padding: 1rem 0;
@@ -117,6 +149,9 @@ button:hover {
   color: var(--color-black);
 }
 
+.hidden {
+  display: none;
+}
 /*  inventory section */
 
 .inventory-collection {
