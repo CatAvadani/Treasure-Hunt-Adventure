@@ -38,28 +38,6 @@ function displayScene() {
     backgroundVideo.classList.add("hidden");
     backgroundScene.classList.remove("hidden");
     showButtons();
-    const seaShell = document.createElement("img");
-    seaShell.setAttribute("src", "images/shell1.png");
-    seaShell.className = "shell";
-    imageContainer.append(seaShell);
-
-    seaShell.addEventListener("click", () => {
-      inventory.push("SeaShell");
-      seaShell.classList.add("hidden");
-      const item1 = document.createElement("img");
-      item1.classList.add("inventory-item");
-      item1.setAttribute("src", "images/shell1.png");
-      invertoryCollection.appendChild(item1);
-    });
-
-    // const messageBottle = document.createElement("img");
-    // messageBottle.setAttribute("src", "images/message-bottle.png");
-    // messageBottle.className = "message-bottle";
-    // imageContainer.append(messageBottle);
-
-    // messageBottle.addEventListener("click", () => {
-    //   showMessage();
-    // });
   });
 
   btn1.addEventListener("click", () => {
@@ -72,15 +50,54 @@ function displayScene() {
     backgroundScene.classList.remove("hidden");
     showButtons();
   });
-}
 
-function showMessage() {
+  if (currentScene.title === scenes[2].title) {
+    createShell();
+    createBottle(currentScene.instruction);
+  }
+}
+// create a seashell
+function createShell() {
+  const seaShell = document.createElement("img");
+  seaShell.setAttribute("src", "images/shell1.png");
+  seaShell.className = "shell";
+  imageContainer.append(seaShell);
+
+  seaShell.addEventListener("click", () => {
+    inventory.push("SeaShell");
+    seaShell.classList.add("hidden");
+    const item1 = document.createElement("img");
+    item1.classList.add("inventory-item");
+    item1.setAttribute("src", "images/shell1.png");
+    invertoryCollection.appendChild(item1);
+  });
+}
+// create bottle
+function createBottle(message) {
+  const messageBottle = document.createElement("img");
+  messageBottle.setAttribute("src", "images/message-bottle.png");
+  messageBottle.className = "message-bottle";
+  imageContainer.append(messageBottle);
+
+  messageBottle.addEventListener("click", () => {
+    showMessage(message);
+  });
+}
+function showMessage(message) {
   const messageContainer = document.createElement("div");
   const text = document.createElement("p");
+  const closeBtn = document.createElement("button");
+  closeBtn.className = "close-btn";
+  closeBtn.textContent = "X";
   messageContainer.className = "message-container";
-  text.textContent = "Do this";
+  text.textContent = message;
   imageContainer.append(messageContainer);
   messageContainer.append(text);
+  messageContainer.append(closeBtn);
+
+  closeBtn.addEventListener("click", () => {
+    messageContainer.classList.add("hidden");
+  });
 }
 
 function hideButtons() {

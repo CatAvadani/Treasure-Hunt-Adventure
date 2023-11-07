@@ -113,6 +113,7 @@ img {
   transform: scale(2);
   cursor: pointer;
 }
+
 .message-bottle {
   position: absolute;
   height: 100px;
@@ -140,7 +141,18 @@ img {
   background-size: cover;
   z-index: 2;
 }
-
+.close-btn {
+  position: absolute;
+  top: 15%;
+  right: 20%;
+  color: red;
+  font-weight: bold;
+  font-size: 3rem;
+  background-color: transparent;
+}
+.close-btn:hover {
+  background-color: transparent;
+}
 #title {
   padding-top: 3rem;
   margin: auto;

@@ -19,7 +19,7 @@ const scenes = [
   {
     title: "The Lost Treasure Map",
     text: "You found the mysterious map! Explore your surroundings, search for clues and collect all the hidden items. The map leads through the ancient island known for its hidden caves. ",
-    instruction: "Make a choise!",
+    instruction: "Exploare the cave or leave the island!",
     inventoryMessage: "You found a shiny seashell on the beach.",
     background: "images/hidden-map.png",
     button1: {
@@ -35,7 +35,7 @@ const scenes = [
     title: "You find a Cave",
     text: "You helped the local tribe and gained their trust.",
     instruction: "Avoid interaction and explore",
-    background: "images/cave-img.jpeg",
+    background: "images/cave3.png",
     button1: {
       title: "Go into the dark cave",
       text: "Continue your journey",
