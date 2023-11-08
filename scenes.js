@@ -23,7 +23,7 @@ const scenes = [
     inventoryMessage: "You found a shiny seashell on the beach.",
     background: "images/hidden-map.png",
     button1: {
-      title: "Explore",
+      title: "Explore the Cave",
       nextScene: 2,
     },
     button2: {
@@ -32,35 +32,46 @@ const scenes = [
     },
   },
   {
-    title: "You find a Cave",
-    text: "You helped the local tribe and gained their trust.",
-    instruction: "Avoid interaction and explore",
+    title: "Dark Cave",
+    text: "You enter a dark cave. You need to collect all the hidden items.",
+    instruction:
+      "To move forward you will need to solve the puzzle or go back to the beach.",
     background: "images/cave3.png",
     button1: {
-      title: "Go into the dark cave",
-      text: "Continue your journey",
+      title: "Solve puzzle",
       nextScene: 1,
     },
     button2: {
-      title: "You are on the beach",
-      text: "You avoided interaction and explored the area.",
+      title: "Go to the beach",
+      nextScene: 4,
+    },
+  },
+  {
+    title: "Leave the Island",
+    text: "",
+    instruction: "Game Over",
+    background: "images/pirate-ship1.png",
+    button1: {
+      title: "Go back to the ship",
+      nextScene: 0,
+    },
+    button2: {
+      title: "Exploare the beach",
       nextScene: 0,
     },
   },
   {
-    title: "You Leave the island",
+    title: "You are on the Beach",
     text: "",
     instruction: "",
     background: "images/beach-img.jpg",
     button1: {
-      title: "Find your ship",
-      text: "Continue your journey",
+      title: "Return to the map",
       nextScene: 1,
     },
     button2: {
-      title: "You are on the beach",
-      text: "You avoided interaction and explored the area.",
-      nextScene: 0,
+      title: "Explore the beach",
+      nextScene: 1, // create a new scene
     },
   },
 ];

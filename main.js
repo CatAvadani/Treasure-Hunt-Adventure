@@ -17,6 +17,7 @@ const hiddenMap = document.getElementById("hidden-map");
 const invertoryCollection = document.querySelector(".inventory-collection");
 const backgroundVideo = document.getElementById("background-video");
 
+// create an inventory array of the collected items
 let inventory = [];
 
 function displayScene() {
@@ -52,8 +53,20 @@ function displayScene() {
   });
 
   if (currentScene.title === scenes[2].title) {
+    instruction.textContent = "";
     createShell();
     createBottle(currentScene.instruction);
+  }
+
+  if (currentScene.title === scenes[3].title) {
+    backgroundVideo.classList.remove("hidden");
+    imageContainer.lastChild.classList.add("hidden");
+    buttons.classList.add("hidden");
+  }
+
+  if (currentScene.title === scenes[4].title) {
+    backgroundVideo.classList.add("hidden");
+    buttons.classList.remove("hidden");
   }
 }
 // create a seashell
@@ -75,7 +88,7 @@ function createShell() {
 // create bottle
 function createBottle(message) {
   const messageBottle = document.createElement("img");
-  messageBottle.setAttribute("src", "images/message-bottle.png");
+  messageBottle.setAttribute("src", "images/bottle-img1.png");
   messageBottle.className = "message-bottle";
   imageContainer.append(messageBottle);
 
@@ -88,7 +101,7 @@ function showMessage(message) {
   const text = document.createElement("p");
   const closeBtn = document.createElement("button");
   closeBtn.className = "close-btn";
-  closeBtn.textContent = "X";
+  closeBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
   messageContainer.className = "message-container";
   text.textContent = message;
   imageContainer.append(messageContainer);
