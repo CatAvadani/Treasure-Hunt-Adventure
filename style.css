@@ -100,12 +100,13 @@ img {
   transform: scale(5);
   cursor: pointer;
 }
+
 .shell {
   position: absolute;
   height: 70px;
   width: 70px;
-  left: 20%;
-  bottom: 28%;
+  left: 10%;
+  bottom: 30%;
   z-index: 2;
   transition: var(--transition);
 }
@@ -146,6 +147,19 @@ img {
   font-size: 2rem;
   font-weight: bold;
   line-height: 3rem;
+}
+.key {
+  position: absolute;
+  height: 70px;
+  width: 70px;
+  left: 17%;
+  top: 35%;
+  z-index: 2;
+  transition: var(--transition);
+}
+.key:hover {
+  transform: scale(2);
+  cursor: pointer;
 }
 .close-btn {
   position: absolute;

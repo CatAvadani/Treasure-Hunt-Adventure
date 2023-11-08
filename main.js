@@ -56,6 +56,7 @@ function displayScene() {
     instruction.textContent = "";
     createShell();
     createBottle(currentScene.instruction);
+    createKey();
   }
 
   if (currentScene.title === scenes[3].title) {
@@ -69,6 +70,22 @@ function displayScene() {
     buttons.classList.remove("hidden");
   }
 }
+// create key
+function createKey() {
+  const key = document.createElement("img");
+  key.setAttribute("src", "images/key1.png");
+  key.className = "key";
+  imageContainer.append(key);
+
+  key.addEventListener("click", () => {
+    inventory.push("Key");
+    key.classList.add("hidden");
+    const item = document.createElement("img");
+    item.classList.add("inventory-item");
+    item.setAttribute("src", "images/key1.png");
+    invertoryCollection.appendChild(item);
+  });
+}
 // create a seashell
 function createShell() {
   const seaShell = document.createElement("img");
@@ -79,10 +96,10 @@ function createShell() {
   seaShell.addEventListener("click", () => {
     inventory.push("SeaShell");
     seaShell.classList.add("hidden");
-    const item1 = document.createElement("img");
-    item1.classList.add("inventory-item");
-    item1.setAttribute("src", "images/shell1.png");
-    invertoryCollection.appendChild(item1);
+    const item = document.createElement("img");
+    item.classList.add("inventory-item");
+    item.setAttribute("src", "images/shell1.png");
+    invertoryCollection.appendChild(item);
   });
 }
 // create bottle
