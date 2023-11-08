@@ -33,43 +33,72 @@ function displayScene() {
   hideButtons();
   backgroundScene.classList.add("hidden");
 
-  hiddenMap.addEventListener("click", () => {
+  hiddenMap.onclick = () => {
     displayNextScene(currentScene.button1.nextScene);
     hiddenMap.classList.add("hidden");
     backgroundVideo.classList.add("hidden");
     backgroundScene.classList.remove("hidden");
     showButtons();
-  });
+  };
 
-  btn1.addEventListener("click", () => {
+  btn1.onclick = () => {
     displayNextScene(currentScene.button1.nextScene);
     backgroundScene.classList.remove("hidden");
     showButtons();
-  });
-  btn2.addEventListener("click", () => {
+  };
+  btn2.onclick = () => {
     displayNextScene(currentScene.button2.nextScene);
     backgroundScene.classList.remove("hidden");
     showButtons();
-  });
+  };
 
-  if (currentScene.title === scenes[2].title) {
-    instruction.textContent = "";
-    createShell();
-    createBottle(currentScene.instruction);
-    createKey();
-  }
+  switch (currentScene.title) {
+    case scenes[2].title:
+      instruction.textContent = "";
+      createShell();
+      createBottle(currentScene.instruction);
+      createKey();
+      console.log(inventory);
 
-  if (currentScene.title === scenes[3].title) {
-    backgroundVideo.classList.remove("hidden");
-    imageContainer.lastChild.classList.add("hidden");
-    buttons.classList.add("hidden");
-  }
+      // create a condition to enable the button only if all the items are being collected
 
-  if (currentScene.title === scenes[4].title) {
-    backgroundVideo.classList.add("hidden");
-    buttons.classList.remove("hidden");
+      // btn1.disabled = true;
+      // if (inventory.includes("Seashell")) {
+      //   btn1.disabled = false;
+      // }
+      break;
+    case scenes[3].title:
+      backgroundVideo.classList.remove("hidden");
+      imageContainer.lastChild.classList.add("hidden");
+      buttons.classList.add("hidden");
+      break;
+    case scenes[4].title:
+      backgroundVideo.classList.add("hidden");
+      buttons.classList.remove("hidden");
+      break;
+
+    default:
+      break;
   }
+  // if (currentScene.title === scenes[2].title) {
+  //   instruction.textContent = "";
+  //   createShell();
+  //   createBottle(currentScene.instruction);
+  //   createKey();
+  // }
+
+  // if (currentScene.title === scenes[3].title) {
+  //   backgroundVideo.classList.remove("hidden");
+  //   imageContainer.lastChild.classList.add("hidden");
+  //   buttons.classList.add("hidden");
+  // }
+
+  // if (currentScene.title === scenes[4].title) {
+  //   backgroundVideo.classList.add("hidden");
+  //   buttons.classList.remove("hidden");
+  // }
 }
+
 // create key
 function createKey() {
   const key = document.createElement("img");
@@ -77,14 +106,14 @@ function createKey() {
   key.className = "key";
   imageContainer.append(key);
 
-  key.addEventListener("click", () => {
+  key.onclick = () => {
     inventory.push("Key");
     key.classList.add("hidden");
     const item = document.createElement("img");
     item.classList.add("inventory-item");
     item.setAttribute("src", "images/key1.png");
     invertoryCollection.appendChild(item);
-  });
+  };
 }
 // create a seashell
 function createShell() {
@@ -93,14 +122,14 @@ function createShell() {
   seaShell.className = "shell";
   imageContainer.append(seaShell);
 
-  seaShell.addEventListener("click", () => {
-    inventory.push("SeaShell");
+  seaShell.onclick = () => {
+    inventory.push("Seashell");
     seaShell.classList.add("hidden");
     const item = document.createElement("img");
     item.classList.add("inventory-item");
     item.setAttribute("src", "images/shell1.png");
     invertoryCollection.appendChild(item);
-  });
+  };
 }
 // create bottle
 function createBottle(message) {
@@ -109,9 +138,9 @@ function createBottle(message) {
   messageBottle.className = "message-bottle";
   imageContainer.append(messageBottle);
 
-  messageBottle.addEventListener("click", () => {
+  messageBottle.onclick = () => {
     showMessage(message);
-  });
+  };
 }
 function showMessage(message) {
   const messageContainer = document.createElement("div");
@@ -125,9 +154,9 @@ function showMessage(message) {
   messageContainer.append(text);
   messageContainer.append(closeBtn);
 
-  closeBtn.addEventListener("click", () => {
+  closeBtn.onclick = () => {
     messageContainer.classList.add("hidden");
-  });
+  };
 }
 
 function hideButtons() {
